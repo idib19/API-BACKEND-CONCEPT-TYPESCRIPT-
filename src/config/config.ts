@@ -26,7 +26,7 @@ const configSchema = z.object({
   port: z.number().default(3000),
   mongoUri: z.string().min(1),
   jwtSecret: z.string().min(1),
-  environment: z.enum(['development', 'production', 'test']).default('development'),
+  environment: z.enum(['development', 'production', 'test'])
 });
 
 export const config = configSchema.parse({

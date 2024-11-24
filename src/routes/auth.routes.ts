@@ -17,23 +17,11 @@ const router = Router();
 const authService = new AuthService();
 
 router.post('/register', validateRequest(registerSchema), async (req, res) => {
-  try {
-    const { email, password, role, tenantId } = req.body;
-    const token = await authService.registerUser(email, password, role, tenantId);
-    res.json({ token });
-  } catch (error) {
-    res.status(400).json({ error: (error as Error).message });
-  }
+  // Handle user registration
 });
 
 router.post('/login', validateRequest(loginSchema), async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    const token = await authService.loginUser(email, password);
-    res.json({ token });
-  } catch (error) {
-    res.status(401).json({ error: (error as Error).message });
-  }
+  // Handle user login
 });
 
 export default router;
